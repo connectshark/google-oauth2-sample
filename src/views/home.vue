@@ -5,8 +5,9 @@
 <script>
 export default {
   setup () {
+    console.log(`${process.env.VUE_APP_REDIRECT_RUL}/callback`)
     const login = () => {
-      window.location = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.VUE_APP_REDIRECT_RUL}/callback&scope=openid email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&response_type=token&client_id=${process.env.VUE_APP_CLIENT_ID}`
+      window.location = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.VUE_APP_REDIRECT_RUL}/callback&scope=openid email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&response_type=code&client_id=${process.env.VUE_APP_CLIENT_ID}`
     }
     return {
       login
