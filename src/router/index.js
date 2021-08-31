@@ -1,6 +1,6 @@
-const { createRouter, createWebHashHistory } = require('vue-router')
+const { createRouter, createWebHistory } = require('vue-router')
 
-const history = createWebHashHistory()
+const history = createWebHistory()
 
 const router = createRouter({
   history,
@@ -9,6 +9,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/home.vue')
+    },
+    {
+      path: '/callback',
+      name: 'callback',
+      component: () => import('../views/callback.vue')
     },
     {
       path: '/:pathMatch(.*)*',
