@@ -43,6 +43,7 @@ img{
   width: 100%;
 }
 .img-place{
+  margin: auto;
   width: 80px;
 }
 </style>
