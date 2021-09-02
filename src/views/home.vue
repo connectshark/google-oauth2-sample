@@ -1,11 +1,14 @@
 <template>
-  <div class="btn" @click="login">google 登入</div>
+<div class="home">
+  <div class="login">
+    <p class="btn" @click="login"><i class='bx bxl-google'></i>登入</p>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
   setup () {
-    console.log(`${process.env.VUE_APP_REDIRECT_RUL}/callback`)
     const login = () => {
       window.location = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${process.env.VUE_APP_REDIRECT_RUL}/callback&scope=openid email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email&response_type=code&client_id=${process.env.VUE_APP_CLIENT_ID}`
     }
@@ -17,4 +20,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.btn{
+  margin: 20px auto;
+  background-color: #4E87EC;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 100px;
+  cursor: pointer;
+  transition: background .3s;
+  &:active{
+    background-color: #2b71ed;
+  }
+}
 </style>
